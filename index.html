@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Auto Create URL</title>
+</head>
+<style> 
+    * {
+        font-size: 18px;
+    }
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .domainForm {
+            text-align: center;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        }
+
+        /* CSS */
+        .button-59 {
+            align-items: center;
+            background-color: #fff;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            color: #000;
+            cursor: pointer;
+            display: inline-flex;
+            fill: #000;
+            font-family: Inter,sans-serif;
+            font-weight: 600;
+            height: 48px;
+            justify-content: center;
+            letter-spacing: -.8px;
+            line-height: 24px;
+            min-width: 140px;
+            outline: 0;
+            padding: 0 17px;
+            text-align: center;
+            text-decoration: none;
+            transition: all .3s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-59:focus {
+            color: #171e29;
+        }
+
+        .button-59:hover {
+            border-color: #06f;
+            color: #06f;
+            fill: #06f;
+        }
+
+        .button-59:active {
+            border-color: #06f;
+            color: #06f;
+            fill: #06f;
+        }
+
+        @media (min-width: 768px) {
+            .button-59 {
+                min-width: 170px;
+            }
+        }
+
+        .input-59 {
+                align-items: center;
+                background-color: #fff;
+                border: 2px solid #000;
+                box-sizing: border-box;
+                color: #000;
+                display: inline-flex;
+                fill: #000;
+                font-family: Inter,sans-serif;
+                font-weight: 600;
+                height: 48px;
+                justify-content: center;
+                line-height: 24px;
+                min-width: 140px;
+                outline: 0;
+                padding: 0 17px;
+                text-align: center;
+                text-decoration: none;
+                transition: all .3s;
+                touch-action: manipulation;
+        }
+    
+</style>
+<body>
+    <div class="domainForm">
+        <input type="text" id="generatedURL" class="input-59" placeholder="点击生成-click to create >" readonly>
+        <button id="generateButton" class="button-59" style="cursor: pointer;">Generate URL</button>
+    </div>
+
+    <script>
+        const generateButton = document.getElementById("generateButton");
+        const generatedURL = document.getElementById("generatedURL");
+
+        generateButton.addEventListener("click", () => {
+            // Generate a random URL
+            const randomPath = generateRandomAlphabeticString(7); 
+            const randomPathQ = generateRandomAlphabeticStringQ(5);
+            const randomPathW = generateRandomAlphabeticStringW(2);
+            const generatedURLText = "w."+randomPathW+'.'+randomPath+'.'+randomPathQ+".com";
+
+            // Display the generated URL in the paragraph element
+            generatedURL.value = generatedURLText;
+        });
+
+        function generateRandomAlphabeticString(length) {
+            const characters = 'aceimnorsuvwxz'; // Define the alphabet
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                result += characters[randomIndex];
+            }
+            return result;
+        }
+
+        function generateRandomAlphabeticStringQ(length) {
+            const characters = 'aceimnorsuvwxz'; // Define the alphabet
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                result += characters[randomIndex];
+            }
+            return result;
+        }
+
+        function generateRandomAlphabeticStringW(length) {
+            const characters = 'aceimnorsuvwxz'; // Define the alphabet
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                result += characters[randomIndex];
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
